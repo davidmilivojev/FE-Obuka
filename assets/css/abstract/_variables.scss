@@ -1,0 +1,37 @@
+// colors
+$black: #000;
+$white: #fff;
+
+$grey-050: #F9FAFB;
+$grey-100: #F2F4F7;
+$grey-200: #E4E7EC;
+$grey-300: #CED2DA;
+$grey-400: #97A1AF;
+$grey-500: #637083;
+$grey-600: #414E62;
+$grey-700: #344051;
+$grey-800: #202B37;
+$grey-900: #141C24;
+
+$blue-050: #F0F6FF;
+$blue-100: #CCE0FF;
+$blue-200: #99C2FF;
+$blue-300: #7FB2FF;
+$blue-400: #4C94FF;
+$blue-500: #1A75FF;
+$blue-600: #0066FF;
+$blue-700: #0052CC;
+$blue-800: #003D99;
+$blue-900: #002966;
+
+$color-primary: $blue-600;
+$color-secondary: $blue-900;
+
+
+// fonts
+$font: 'Inter', sans-serif;
+
+// transition
+$slow: 0.9s;
+$normal: 0.6s;
+$fast: 0.3s;
