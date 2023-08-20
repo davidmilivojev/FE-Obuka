@@ -1,0 +1,37 @@
+.banner {
+    position: relative;
+}
+
+.banner__holder {
+    @extend %cover;
+    padding: 80px 0;
+    min-height: 93.3vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .button {
+        margin-top: 40px;
+    }
+    @include breakpoint(tablet) {
+        min-height: 77.1vh;
+        .wrapper {
+            margin-top: 110px;
+        }
+    }
+    @include breakpoint(phone) {
+        min-height: 59vh;
+        .wrapper {
+            margin-top: 23px;
+        }
+    }
+}
+
+.banner__title {
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+}
+
+.banner__title,
+.banner__text {
+    color: $white;
+}
