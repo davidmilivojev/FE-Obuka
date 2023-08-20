@@ -1,3 +1,13 @@
 body {
     background-color: $grey-300;
 }
+
+.section {
+    padding: 80px 0;
+    @include breakpoint(tablet) {
+        padding: 64px 0;
+    }
+    @include breakpoint(phone) {
+        padding: 48px 0;
+    }
+}

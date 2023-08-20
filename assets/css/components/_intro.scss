@@ -1,0 +1,42 @@
+.intro {
+    padding: 16px 0 64px;
+}
+
+.intro__container {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro__title {
+    color: $grey-900;
+    margin-bottom: 12px;
+    text-transform: capitalize;
+}
+
+.intro__headline {
+    display: block;
+    font-weight: 600;
+    margin-top: -12px;
+    @include breakpoint(phone) {
+        margin-top: -5px;
+    }
+}
+
+.intro__category {
+    display: inline-block;
+    vertical-align: top;
+    color: $blue-700;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 2px 10px;
+    border-radius: 150px;
+    background-color: $blue-050;
+    margin-bottom: 8px;
+}
+
+.intro__text {
+    color: $grey-700;
+}
