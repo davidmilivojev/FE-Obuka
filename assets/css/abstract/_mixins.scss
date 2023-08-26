@@ -9,3 +9,15 @@
 		@media only screen and (max-width: $value) { @content; }
 	}
 }
+
+$blockColors: (
+	"blue500": $blue-500,
+	"blue700": $blue-700,
+	"blue900": $blue-900,
+);
+
+@each $name, $value  in $blockColors {
+	.block--#{$name} {
+		background-color: $value;
+	}
+}
