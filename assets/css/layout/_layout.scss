@@ -1,9 +1,21 @@
 .section {
+    position: relative;
     padding: 80px 0;
+    color: $black;
     @include breakpoint(tablet) {
         padding: 64px 0;
     }
     @include breakpoint(phone) {
         padding: 48px 0;
     }
+}
+
+.section--blue {
+    background-color: $blue-900;
+    color: $white;
+}
+
+.section--grey {
+    background-color: $grey-600;
+    color: $white;
 }

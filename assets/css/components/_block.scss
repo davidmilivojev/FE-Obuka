@@ -2,9 +2,14 @@
     position: relative;
     overflow: hidden;
     padding: 70px 0;
-    color: $black;
     .link {
-        margin-top: 32px;
+        margin-top: 19px;
+    }
+    @include breakpoint(tablet) {
+        padding: 5px 0;
+    }
+    @include breakpoint(phone) {
+        padding: 0;
     }
 }
 
@@ -14,20 +19,18 @@
     }
 }
 
-.block--blue {
-    background-color: $blue-900;
-    color: $white;
-}
-
-.block--grey {
-    background-color: $grey-600;
-    color: $white;
-}
-
 .block__row {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -16px;
+    @include breakpoint(touch) {
+        display: block;
+        margin: 0 auto;
+        padding-bottom: 88px;
+    }
+    @include breakpoint(phone) {
+        padding-bottom: 0;
+    }
 }
 
 .block__col {
@@ -38,6 +41,11 @@
     flex-wrap: wrap;
     align-items: center;
     position: relative;
+    @include breakpoint(touch) {
+        flex: none;
+        max-width: 100%;
+        padding: 0;
+    }
 }
 
 .block__holder {
@@ -46,6 +54,24 @@
     .block__desc,
     li {
         color: inherit;
+    }
+    @include breakpoint(touch) {
+        padding: 0;
+    }
+}
+
+.block__inner {
+    @include breakpoint(touch) {
+        position: relative;
+        width: 100%;
+    }
+    @include breakpoint(tablet) {
+        padding-bottom: 51.13%;
+        margin-top: 50px;
+    }
+    @include breakpoint(phone) {
+        padding-bottom: 104.13%;
+        margin-top: 44px;
     }
 }
 
@@ -59,6 +85,10 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    @include breakpoint(touch) {
+        left: 0;
+        width: 100%;
+    }
 }
 
 .block__title {

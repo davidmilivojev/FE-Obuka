@@ -87,12 +87,12 @@ small, .small {
 
 ul:not([class]) {
     list-style: disc;
-    padding-left: 15px;
+    margin-left: 24px;
 }
 
 ol:not([class]) {
     list-style: decimal;
-    padding-left: 15px;
+    margin-left: 24px;
 }
 
 li:not([class]) {

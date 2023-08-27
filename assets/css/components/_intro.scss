@@ -1,5 +1,8 @@
 .intro {
     padding: 16px 0 64px;
+    @include breakpoint(phone) {
+        padding: 16px 0 54px;
+    }
 }
 
 .intro__container {
