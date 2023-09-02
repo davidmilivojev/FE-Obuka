@@ -31,5 +31,22 @@ function stickyHeader() {
     });
 }
 
-stickyHeader()
+function slider() {
+    var $slider = $('.js-slider');
+    $(window).on('resize load', function() {
+        if ($(window).width() < 767) {
+            $slider.slick({
+                prevArrow: $('.js-arrow-prev'),
+                nextArrow: $('.js-arrow-next'),
+            });
+        } else {
+            if($slider.hasClass('slick-initialized')) {
+                $slider.slick('unslick');
+            }
+        }
+    });
+}
+
+stickyHeader();
 navigation();
+slider();
