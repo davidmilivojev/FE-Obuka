@@ -1,0 +1,50 @@
+.cashcard {
+    position: relative;
+}
+
+.cashcard__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+    @include breakpoint(touch) {
+        display: block;
+        margin: 0;
+    }
+}
+
+.cashcard__col {
+    flex: 1 1 33.33%;
+    max-width: 33.33%;
+    padding: 0 16px;
+    display: flex;
+    @include breakpoint(touch) {
+        display: block;
+        flex: none;
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 24px;
+    }
+}
+
+.cashcard__item {
+    padding: 24px;
+    border-radius: 8px;
+    background-color: $blue-050;
+}
+
+.cashcard__title {
+    margin-bottom: 12px;
+    span {
+        @extend .text-small;
+        display: block;
+        color: $grey-500;
+    }
+}
+
+.cashcard__desc {
+    @extend .text-small;
+}
+
+.cashcard__btn {
+    margin-top: 34px;
+}
