@@ -10,6 +10,16 @@
     }
 }
 
+.section--spacing {
+    padding: 140px 0;
+    @include breakpoint(tablet) {
+        padding: 64px 0;
+    }
+    @include breakpoint(phone) {
+        padding: 48px 0;
+    }
+}
+
 .section--blue {
     background-color: $blue-900;
     color: $white;

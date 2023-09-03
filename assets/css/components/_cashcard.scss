@@ -1,5 +1,9 @@
 .cashcard {
     position: relative;
+    margin-top: -30px;
+    @include breakpoint(phone) {
+       margin-top: -49px;
+    }
 }
 
 .cashcard__row {
@@ -32,12 +36,28 @@
     background-color: $blue-050;
 }
 
+.cashcard__content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include breakpoint(touch) {
+        display: block;
+    }
+}
+
 .cashcard__title {
     margin-bottom: 12px;
     span {
         @extend .text-small;
         display: block;
         color: $grey-500;
+    }
+    @include breakpoint(tablet) {
+        font-size: 36px;
+        line-height: 44px;
+        font-weight: 600;
     }
 }
 
@@ -47,4 +67,53 @@
 
 .cashcard__btn {
     margin-top: 34px;
+}
+
+.cashcard__controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 82px;
+    @include breakpoint(tablet) {
+        padding-bottom: 68px;
+    }
+    @include breakpoint(phone) {
+        padding-bottom: 52px;
+    }
+}
+
+.cashcard__buttons {
+    border-radius: 12px;
+    border: 1px solid $grey-100;
+    background: $grey-050;
+    padding: 8px;
+}
+
+.cashcard__buttons-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.cashcard__buttons-list-item {
+    position: relative;
+}
+
+.cashcard__buttons-btn {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: $grey-500;
+    display: inline-block;
+    background-color: transparent;
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: 0.3s ease-in-out;
+}
+
+.cashcard__buttons-btn--active {
+    box-shadow: 0px 2px 4px 0px rgba($grey-700, 0.12);
+    background-color: $white;
+    color: $grey-700;
 }
