@@ -87,6 +87,7 @@
     border: 1px solid $grey-100;
     background: $grey-050;
     padding: 8px;
+    position: relative;
 }
 
 .cashcard__buttons-list {
@@ -110,10 +111,35 @@
     border-radius: 8px;
     padding: 8px 16px;
     transition: 0.3s ease-in-out;
+    position: relative;
+    z-index: 2;
 }
 
 .cashcard__buttons-btn--active {
-    box-shadow: 0px 2px 4px 0px rgba($grey-700, 0.12);
-    background-color: $white;
+    // box-shadow: 0px 2px 4px 0px rgba($grey-700, 0.12);
+    // background-color: $white;
     color: $grey-700;
+}
+
+.cashcard__float {
+    position: absolute;
+    height: calc(100% - 16px);
+    top: 8px;
+    left: 8px;
+    width: 100px;
+    box-shadow: 0px 2px 4px 0px rgba($grey-700, 0.12);
+    color: $grey-700;
+    border-radius: 8px;
+    background-color: $white;
+    pointer-events: none;
+    transition: 0.4s ease-in-out;
+    z-index: 1;
+}
+
+.cashcard__container {
+    display: none;
+}
+
+.cashcard__container--active {
+    display: block;
 }

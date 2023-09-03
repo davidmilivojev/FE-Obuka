@@ -47,6 +47,40 @@ function slider() {
     });
 }
 
+function tabs() {
+    var $btnTab = $('.js-cashcard-btn');
+    var $containerTab = $('.js-cashcard-container');
+    var $float = $('.js-cashcard-float');
+    var btnActive = 'cashcard__buttons-btn--active';
+    var containerActive = 'cashcard__container--active';
+
+    $containerTab.each(function(i) {
+        $(this).attr('data-index', i);
+    });
+
+    $btnTab.on('click', function() {
+        var index = $(this).parent().index();
+        var itemWidth = $(this).outerWidth();
+        var itemLeft = $(this).parent().position().left;
+        $btnTab.removeClass(btnActive);
+        $(this).addClass(btnActive);
+        $containerTab.removeClass(containerActive);
+        $('.js-cashcard-container[data-index="' + index +  '"]').addClass(containerActive);
+        // $containerTab.eq(index).addClass(containerActive);
+        $float.css({
+            'left': itemLeft,
+            'width': itemWidth
+        });
+    });
+
+    $(window).on('load', function() {
+        $btnTab.first().trigger('click');
+    });
+}
+
 stickyHeader();
 navigation();
 slider();
+tabs();
+
+// form add custom dropdown TODO
