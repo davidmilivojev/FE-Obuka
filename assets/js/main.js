@@ -73,8 +73,40 @@ function tabs() {
         });
     });
 
+    loadFirstItem($btnTab);
+}
+
+function accordions(accordion, type) {
+    // var $accordionBtn = $('.js-accordion-btn');
+    // var $accordionContainer = $('.js-accordion-container');
+    var $accordionBtn = $(accordion).find($('.js-accordion-btn'));
+    var $accordionContainer = $(accordion).find($('.js-accordion-container'));
+    var opened = 'accordion__item--opened';
+    var multi = type;
+
+    // $accordionBtn.on('click', function() {
+    //     $(this).parent().toggleClass(opened);
+    //     $(this).next().slideToggle();
+    // });
+
+    $accordionBtn.on('click', function() {
+        if (multi) {
+            $(this).parent().toggleClass(opened);
+            $(this).next().stop().slideToggle();
+        } else {
+            $accordionBtn.parent().removeClass(opened);
+            $(this).parent().addClass(opened);
+            $accordionContainer.stop().slideUp();
+            $(this).next().stop().slideDown();
+        }
+    });
+
+    loadFirstItem($accordionBtn);
+}
+
+function loadFirstItem(item) {
     $(window).on('load', function() {
-        $btnTab.first().trigger('click');
+        item.first().trigger('click');
     });
 }
 
@@ -82,5 +114,6 @@ stickyHeader();
 navigation();
 slider();
 tabs();
+accordions('.js-acc', false);
 
 // form add custom dropdown TODO

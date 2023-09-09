@@ -1,0 +1,101 @@
+.accordion {
+    width: 100%;
+    max-width: 840px;
+    margin: 0 auto;
+    counter-reset: accordion;
+}
+
+.accordion__item {
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid $grey-300;
+    + .accordion__item {
+        margin-top: 16px;
+    }
+    @include breakpoint(phone) {
+        + .accordion__item {
+            margin-top: 10px;
+        }
+    }
+}
+
+.accordion__item--opened {
+    .accordion__btn {
+        padding-bottom: 16px;
+    }
+    .accordion__icon--plus {
+        display: none;
+    }
+    .accordion__icon--minus {
+        display: block;
+    }
+}
+
+.accordion__btn {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    padding: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+    .text-large {
+        font-weight: 500;
+        transition: 0.3s ease-in-out;
+        color: $grey-900;
+        flex: 1 1 calc(100% - 24px);
+        max-width: calc(100% - 24px);
+        padding-right: 10px;
+        text-align: left;
+        &::before {
+            counter-increment: accordion;
+            content: counters(accordion, ".", decimal-leading-zero) ".";
+            padding-right: 5px;
+        }
+    }
+    &:hover {
+        .text-large {
+            color: $blue-500;
+        }
+    }
+    @include breakpoint(phone) {
+        padding: 16px;
+        .text-large {
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+}
+
+.accordion__icons {
+    position: relative;
+    flex: 0 0 24px;
+    max-width: 24px;
+    height: 24px;
+}
+
+.accordion__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    svg {
+        height: 24px;
+    }
+    path {
+        stroke: $grey-500;
+    }
+}
+
+.accordion__icon--minus {
+    display: none;
+}
+
+.accordion__container {
+    display: none;
+    padding: 0 32px 32px;
+    @include breakpoint(phone) {
+        padding: 0 16px 16px;
+    }
+}
