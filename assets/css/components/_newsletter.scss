@@ -5,5 +5,32 @@
     text-align: center;
     .h4 {
         margin-bottom: 24px;
+        + .h4 {
+            display: none;
+        }
+    }
+    @include breakpoint(touch) {
+        .h4 {
+            font-weight: 700;
+            display: none;
+            + .h4 {
+                display: block;
+            }
+        }
+    }
+    @include breakpoint(tablet) {
+        .h4 {
+            margin-bottom: 36px;
+        }
+    }
+    @include breakpoint(phone) {
+        .h4 {
+            font-weight: 700;
+            margin-bottom: 44px;
+        }
+        .button {
+            width: 100%;
+            display: block;
+        }
     }
 }

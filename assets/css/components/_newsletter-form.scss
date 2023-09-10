@@ -1,0 +1,73 @@
+.newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include breakpoint(phone) {
+        display: block;
+    }
+}
+
+.newsletter-form__title {
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.newsletter-form__form {
+    max-width: 494px;
+    width: 100%;
+    margin: 40px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint(tablet) {
+        max-width: 454px;
+    }
+    @include breakpoint(phone) {
+        max-width: 100%;
+        display: block;
+    }
+}
+
+.newsletter-form__content {
+    text-align: center;
+    @include breakpoint(phone) {
+        text-align: left;
+    }
+}
+
+.newsletter-form__desc  {
+    max-width: 512px;
+    margin: 0 auto;
+    @include breakpoint(tablet) {
+        max-width: 642px;
+    }
+    @include breakpoint(phone) {
+        max-width: 100%;
+    }
+}
+
+.newsletter-form__input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid $grey-300;
+    background-color: $white;
+    margin-right: 16px;
+    flex: 1 1 calc(100% - 136px);
+    max-width: calc(100% - 136px);
+    @include breakpoint(phone) {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+    }
+}
+
+.newsletter-form__btn {
+    flex: 0 0 120px;
+    max-width: 120px;
+    @include breakpoint(phone) {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+        margin-top: 12px;
+    }
+}
