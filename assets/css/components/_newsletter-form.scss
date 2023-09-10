@@ -1,4 +1,8 @@
 .newsletter-form {
+    display: none;
+}
+
+.newsletter-form__wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

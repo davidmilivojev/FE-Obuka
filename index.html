@@ -498,39 +498,43 @@
         </section>
         <section class="section">
             <div class="wrapper">
-                <div class="newsletter">
+                <div class="newsletter js-modal-item">
                     <div class="newsletter__holder">
                         <div>
                             <h3 class="h4">Subscribe to Newsletter</h3>
                             <h3 class="h4">Ready to Bring Whitespace to your Organization</h3>
                         </div>
-                        <button class="button" type="button">Subscribe now</button>
+                        <button class="button js-modal-btn" type="button">Subscribe now</button>
+                    </div>
+                    <div class="newsletter-form js-modal-target">
+                        <div class="newsletter-form__wrap">
+                            <div class="newsletter-form__content">
+                                <h4 class="newsletter-form__title">Enter your e-mail address and get started for free</h4>
+                                <p class="newsletter-form__desc text-large">Stay up to date with the most relevant information, our new collections, news and special offers!</p>
+                            </div>
+                            <form class="newsletter-form__form" action="javascript:;">
+                                <input class="newsletter-form__input text" type="text" placeholder="Your e-mail address">
+                                <button class="newsletter-form__btn button" type="submit">Subscribe</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <div class="modal">
-        <div class="wrapper">
-            <div class="modal__container">
-                <div class="modal__holder">
-                    <!-- content -->
-                    <div class="newsletter-form">
-                        <div class="newsletter-form__content">
-                            <h4 class="newsletter-form__title">Enter your e-mail address and get started for free</h4>
-                            <p class="newsletter-form__desc text-large">Stay up to date with the most relevant information, our new collections, news and special offers!</p>
-                        </div>
-                        <form class="newsletter-form__form" action="javascript:;">
-                            <input class="newsletter-form__input text" type="text" placeholder="Your e-mail address">
-                            <button class="newsletter-form__btn button" type="submit">Subscribe</button>
-                        </form>
+    <div class="modal js-modal">
+        <div class="modal__inner">
+            <div class="wrapper">
+                <div class="modal__container">
+                    <div class="modal__holder js-modal-content">
+                        <!-- content -->
                     </div>
+                    <button class="modal__close js-modal-close" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M8.66667 8.66667L12 12M12 12L15.3333 15.3333M12 12L15.3333 8.66667M12 12L8.66667 15.3333M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#141C24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
-                <button class="modal__close" type="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M8.66667 8.66667L12 12M12 12L15.3333 15.3333M12 12L15.3333 8.66667M12 12L8.66667 15.3333M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#141C24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
             </div>
         </div>
     </div>

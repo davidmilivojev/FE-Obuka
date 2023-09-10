@@ -110,10 +110,33 @@ function loadFirstItem(item) {
     });
 }
 
+function modal() {
+    var $modal = $('.js-modal');
+    var $modalBtn = $('.js-modal-btn');
+    var $modalContent = $('.js-modal-content');
+    var $modalTarget = $('.js-modal-target');
+    var $modalClose = $('.js-modal-close');
+    var modalItem = '.js-modal-item';
+
+    $modalBtn.on('click', function() {
+        var innerContent = $(this).closest(modalItem).find($modalTarget).html();
+        $modalContent.empty();
+        $modalContent.append(innerContent);
+        $modal.stop().fadeIn();
+    });
+
+    $modalClose.on('click', function() {
+        $modal.stop().fadeOut(function() {
+            $modalContent.empty();
+        });
+    });
+}
+
 stickyHeader();
 navigation();
 slider();
 tabs();
 accordions('.js-acc', false);
+modal();
 
 // form add custom dropdown TODO
