@@ -1,0 +1,14 @@
+.contact {
+    position: relative;
+    overflow: hidden;
+}
+
+.contact__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact__col {
+    flex: 1 1 50%;
+    max-width: 50%;
+}

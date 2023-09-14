@@ -132,11 +132,16 @@ function modal() {
     });
 }
 
+function dropdownSelectric() {
+    $('select').selectric();
+}
+
 stickyHeader();
 navigation();
 slider();
 tabs();
 accordions('.js-acc', false);
 modal();
+dropdownSelectric();
 
 // form add custom dropdown TODO
