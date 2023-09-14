@@ -136,6 +136,29 @@ function dropdownSelectric() {
     $('select').selectric();
 }
 
+function dropdown() {
+    var $dropdown = $('.js-dropdown');
+    var $dropdownBtn = $('.js-dropdown-btn');
+    var $dropdownItem = $('.js-dropdown-item');
+    var $dropdownList = $('.js-dropdown-list');
+    var selected = 'dropdown__item-btn--selected';
+    var active = 'dropdown__btn--active';
+
+    $dropdownBtn.on('click', function() {
+        $(this).next().stop().slideToggle();
+        $(this).toggleClass(active);
+    });
+
+    $dropdownItem.on('click', function() {
+        var $list = $(this).closest($dropdownList);
+        var content = $(this).text();
+        $list.stop().slideToggle();
+        $list.find($dropdownItem).removeClass(selected);
+        $(this).addClass(selected);
+        $(this).closest($dropdown).find($dropdownBtn).text(content).toggleClass(active);
+    });
+}
+
 stickyHeader();
 navigation();
 slider();
@@ -143,5 +166,4 @@ tabs();
 accordions('.js-acc', false);
 modal();
 dropdownSelectric();
-
-// form add custom dropdown TODO
+dropdown();
