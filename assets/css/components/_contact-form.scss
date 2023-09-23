@@ -1,7 +1,19 @@
 .contact-form {
     padding: 24px;
     max-width: 600px;
-    width: 100%;
+    width: calc(100% - 130px);
+    margin-left: 130px;
+    @include breakpoint(touch) {
+        width: 100%;
+        margin-left: 0;
+        max-width: 100%;
+    }
+    @include breakpoint(tablet) {
+        padding: 24px 32px;
+    }
+    @include breakpoint(phone) {
+        padding: 24px 16px;
+    }
 }
 
 .contact-form__title {
@@ -35,6 +47,12 @@
     padding: 10px;
 }
 
+.contact-form__input--textarea {
+    min-height: 100px;
+    resize: vertical;
+    display: block;
+}
+
 .contact-form__form {
     margin-top: 24px;
 }
@@ -60,4 +78,8 @@
 .contact-form__field--half {
     flex: 1 1 50%;
     max-width: 50%;
+    @include breakpoint(phone) {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }

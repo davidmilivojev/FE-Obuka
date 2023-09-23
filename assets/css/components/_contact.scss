@@ -1,14 +1,41 @@
 .contact {
     position: relative;
-    overflow: hidden;
+    margin: -80px 0 0;
+    @include breakpoint(tablet) {
+        margin: -64px -32px 0;
+    }
+    @include breakpoint(phone) {
+        margin: -48px -16px 0;
+    }
 }
 
 .contact__row {
     display: flex;
     flex-wrap: wrap;
+    @include breakpoint(touch) {
+        display: block;
+    }
 }
 
 .contact__col {
-    flex: 1 1 50%;
-    max-width: 50%;
+    flex: 1 1 40%;
+    max-width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    &:last-child {
+        flex: 1 1 60%;
+        max-width: 60%;
+        padding: 64px 0;
+    }
+    @include breakpoint(touch) {
+        flex: none;
+        max-width: 100%;
+        &:last-child {
+            flex: none;
+            max-width: 100%;
+            padding: 0;
+        }
+    }
 }
