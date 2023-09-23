@@ -159,6 +159,23 @@ function dropdown() {
     });
 }
 
+function scrollToTop() {
+    var $btn = $('.js-scrolltop');
+
+    $btn.on('click', function() {
+        $('html, body').animate({ scrollTop: 0 }, 600);
+    });
+
+    $(window).on('scroll', function() {
+        var scrollTop = $(this).scrollTop();
+        if(scrollTop > 1400) {
+            $btn.fadeIn();
+        } else {
+            $btn.fadeOut();
+        }
+    });
+}
+
 stickyHeader();
 navigation();
 slider();
@@ -167,3 +184,4 @@ accordions('.js-acc', false);
 modal();
 dropdownSelectric();
 dropdown();
+scrollToTop();

@@ -24,6 +24,22 @@
     }
 }
 
+.button--scrolltop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    display: none;
+    svg {
+        display: block;
+        height: 20px;
+        transform: rotate(-90deg);
+    }
+    path {
+        stroke: $white;
+    }
+}
+
 .button__icon {
     height: 20px;
     margin-left: 8px;
