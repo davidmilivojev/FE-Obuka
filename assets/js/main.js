@@ -176,6 +176,25 @@ function scrollToTop() {
     });
 }
 
+function emptyField() {
+    var $submit = $('.js-submit');
+
+    $submit.on('click', function() {
+        $('.contact-form__input').each(function() {
+            var $parent = $(this).closest('.contact-form__field');
+            if (!$(this).val()) {
+                if(!$parent.find('.contact-form__label').next().length) {
+                    var placeholder = $(this).prev().text();
+                    var text = 'is empty!';
+                    $parent.append('<span class="contact-form__error">' + placeholder + ' ' + text + '</span>');
+                }
+            } else {
+                $parent.find('.contact-form__label').next().remove();
+            }
+        });
+    });
+}
+
 stickyHeader();
 navigation();
 slider();
@@ -185,3 +204,4 @@ modal();
 dropdownSelectric();
 dropdown();
 scrollToTop();
+emptyField();
