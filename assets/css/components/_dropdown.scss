@@ -14,13 +14,13 @@
     &::before {
         content: '';
         position: absolute;
-        top: 50%;
+        top: 13px;
         right: 15px;
-        width: 14px;
-        height: 14px;
+        width: 10px;
+        height: 10px;
         border-bottom: 2px solid $blue-500;
         border-left: 2px solid $blue-500;
-        transform: translateY(-50%) rotate(-45deg);
+        transform: rotate(-45deg);
         transition: 0.3s ease-in-out;
     }
     &:hover {
@@ -30,7 +30,8 @@
 
 .dropdown__btn--active {
     &::before {
-        transform: translateY(-50%) rotate(135deg);
+        top: 19px;
+        transform: rotate(135deg);
     }
 }
 
@@ -44,7 +45,7 @@
     background-color: $white;
     overflow: hidden;
     overflow-y: auto;
-    max-height: 184px;
+    max-height: 176px;
     display: none;
 }
 
@@ -56,12 +57,12 @@
     padding: 10px;
     text-align: left;
     &:hover {
-        background-color: $blue-500;
+        background-color: $blue-700;
         color: $white;
     }
 }
 
 .dropdown__item-btn--selected {
-    background-color: $blue-500;
+    background-color: $blue-700;
     color: $white;
 }
