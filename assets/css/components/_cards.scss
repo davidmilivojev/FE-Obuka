@@ -8,6 +8,42 @@
     }
 }
 
+.cards--filter {
+    .cards__col {
+        margin-bottom: 20px;
+    }
+}
+
+.cards__filter {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px 8px;
+    border: 1px solid $blue-500;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    > li {
+        padding-right: 12px;
+    }
+    button {
+        border: 1px solid $black;
+        background-color: transparent;
+        padding: 4px 16px 4px 8px;
+        border-radius: 8px;
+        position: relative;
+        &::after {
+            content: 'x';
+            position: absolute;
+            top: 3px;
+            right: 5px;
+            font-weight: 900;
+        }
+        &:hover {
+            background-color: $blue-700;
+            color: $white;
+        }
+    }
+}
+
 .cards__row {
     display: flex;
     flex-wrap: wrap;

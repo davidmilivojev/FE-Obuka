@@ -195,6 +195,79 @@ function emptyField() {
     });
 }
 
+function scrollToSection() {
+    var $link = $('.js-nav-item');
+    var $navItem = $link.parent();
+    var $section = $('.js-section');
+    var activeLink = 'nav__list-item--active';
+    var $headerHeight = $('.js-header').height();
+
+    $section.each(function(i) {
+        $(this).attr('data-index', i);
+    })
+
+    $link.on('click', function() {
+        var $linkParent = $(this).parent();
+        var index = $linkParent.index();
+        var $targetSection = $('.js-section[data-index="' + index + '"]');
+        $('html, body').animate({ scrollTop: $targetSection.offset().top - $headerHeight }, 600);
+    });
+
+    $(window).on('scroll load', function() {
+        var treshold = 10;
+        var scrolltop = $(this).scrollTop() + $headerHeight + treshold;
+        $section.each(function() {
+            var sectionOff = $(this).offset().top;
+            var sectionHeight = $(this).outerHeight();
+            var sectionIndex = $(this).data('index');
+            if (scrolltop > sectionOff && scrolltop < (sectionOff + sectionHeight)) {
+                $navItem.removeClass(activeLink);
+                $navItem.eq(sectionIndex).addClass(activeLink);
+            }
+        });
+    })
+}
+
+function filters() {
+    var $filterBtn = $('.js-filter-item');
+    var $tags = $('.js-tags');
+    var $cardItem = $('.cards__item');
+
+    $filterBtn.find('input').on('click', function(e) {
+        e.stopPropagation();
+        var text = $(this).next().text();
+        var category = $(this).data('category');
+        var newItem =
+        `
+            <li>
+                <button class="js-tag-btn" type="button" data-category="${category}">
+                    ${text}
+                </button>
+            </li>
+        `;
+
+        if ($(this).is(":checked")) {
+            $tags.append(newItem);
+
+            $('.js-tag-btn').each(function() {
+                var cat = $(this).data('category');
+                if (!$cardItem.parent().hasClass('visible')) {
+                    $cardItem.parent().hide();
+                }
+                $('.cards__item[data-category="' + cat + '"]').parent().show().addClass('visible');
+            });
+        } else {
+            $('.js-tag-btn[data-category="' + category + '"]').parent().remove();
+        }
+    });
+
+    $(document).on('click', '.js-tag-btn', function() {
+        var category = $(this).data('category');
+        $(this).parent().remove();
+        $('.js-filter-item [data-category="' + category + '"]').trigger('click');
+    });
+}
+
 stickyHeader();
 navigation();
 slider();
@@ -205,3 +278,5 @@ dropdownSelectric();
 dropdown();
 scrollToTop();
 emptyField();
+scrollToSection();
+filters();
