@@ -257,7 +257,12 @@ function filters() {
                 $('.cards__item[data-category="' + cat + '"]').parent().show().addClass('visible');
             });
         } else {
+            $('.cards__item[data-category="' + category + '"]').parent().hide().removeClass('visible');
             $('.js-tag-btn[data-category="' + category + '"]').parent().remove();
+        }
+
+        if (!$tags.children().length) {
+            $cardItem.parent().show().removeClass('visible');
         }
     });
 
