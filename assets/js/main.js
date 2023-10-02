@@ -233,10 +233,16 @@ function filters() {
     var $tags = $('.js-tags');
     var $cardItem = $('.cards__item');
 
+    //na klik filter checkbox-a dodajemo u dom parce koda koji se nalazi u "newItem"
     $filterBtn.find('input').on('click', function(e) {
+        // bubble efekat da se preventuje
         e.stopPropagation();
+        // uzimamo text koji se nalazi pored checkbox-a
         var text = $(this).next().text();
+        // uzimamo vrednost koja se nalazi u data atributu category od checkbox-a
         var category = $(this).data('category');
+        // deo koda "template/sablon" koji se dodaje prilikom klika checkbox-a
+        // ${text} i ${category} vrednosti prosledjujemo od checkbox-a i dinamicki stvaramo element
         var newItem =
         `
             <li>
@@ -246,29 +252,46 @@ function filters() {
             </li>
         `;
 
+        // proveri da je kliknuti checkbox cekiran (ako cekiramo checkbox)
         if ($(this).is(":checked")) {
+            // kada cekiramo, u tags div dodaj novi element na osnovu sablona "newItem"
             $tags.append(newItem);
 
+            // petlja gde prolazimo kroz tagove
             $('.js-tag-btn').each(function() {
+                // kupimo vrednost data atributa category
                 var cat = $(this).data('category');
+                // zati proveravamo da li neka od kartica ima klasu "visible"
                 if (!$cardItem.parent().hasClass('visible')) {
+                    // ako nema sakrij je
                     $cardItem.parent().hide();
                 }
+                // iz prethodnog klika prolazimo kroz petlju tagova
+                // kartice koje imaju istu kategoriju kao i tagovi prikazujemo i dodajemo klasu "visible"
                 $('.cards__item[data-category="' + cat + '"]').parent().show().addClass('visible');
             });
         } else {
+            // ako checkbox odcekiramo
+            // sakrij sve kartice sa istom kategorijom trenutno odcekiranog checkboxa i obrisi klasu "visible"
             $('.cards__item[data-category="' + category + '"]').parent().hide().removeClass('visible');
+            // obrisi tag sa istom kategorijom
             $('.js-tag-btn[data-category="' + category + '"]').parent().remove();
         }
 
+        // proveravamo da li wrap div od tagova ima neki tag u sebi
         if (!$tags.children().length) {
+            // ako nema (ako su svi checkbox-ovi ugaseni, prikazi sve kartice) i obrisi klasu
             $cardItem.parent().show().removeClass('visible');
         }
     });
 
+    // sintaksa za dodavanje event-a kada se element pojavljuje dinamicki
     $(document).on('click', '.js-tag-btn', function() {
+        // na klik uzimamo vrednost data atributa category od ovog [taga]
         var category = $(this).data('category');
+        // brisemo tag iz DOM-a
         $(this).parent().remove();
+        // trigerujemo klik na checkbox koji ima istu kategoriju kao i [tag] kako bi ugasili filter
         $('.js-filter-item [data-category="' + category + '"]').trigger('click');
     });
 }
