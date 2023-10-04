@@ -19,7 +19,39 @@
 		color: #000;
 	}
 	// add elements that are going to be hidden
-	.temp {
+	.temp,
+	.block__img {
 		display: none;
+	}
+	.cashcard__container,
+	.cashcard__row {
+		display: block !important;
+	}
+	.cashcard__col {
+		flex: none;
+		max-width: 100%;
+		display: block;
+	}
+	.cashcard__btn {
+		padding: 0 !important;
+		margin-top: 0 !important;
+		.button__icon {
+			display: none !important;
+		}
+	}
+	.cashcard__title {
+		font-size: 2cm;
+		line-height: 1.5;
+		margin-bottom: 0.25cm;
+		span {
+			font-size: 0.5cm;
+			line-height: 1.5;
+			margin-bottom: 0.1cm;
+		}
+	}
+	.cashcard__desc {
+		font-size: 1cm;
+		line-height: 1.5;
+		margin-bottom: 0.2cm;
 	}
 }
